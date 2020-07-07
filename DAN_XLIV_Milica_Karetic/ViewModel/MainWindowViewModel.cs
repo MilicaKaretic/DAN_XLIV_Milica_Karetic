@@ -82,7 +82,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
 
         private ICommand addItem;
         /// <summary>
-        /// Edit student command
+        /// Add item command
         /// </summary>
         public ICommand AddItem
         {
@@ -97,7 +97,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         }
 
         /// <summary>
-        /// Edit student execute
+        /// Add item execute
         /// </summary>
         private void AddItemExecute()
         {
@@ -116,6 +116,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
                     order.UserID = Service.currentUser.UserID;
                     order.ItemID = Item.ItemID;
 
+                    Service.currentOrder = order;
                     db.tblOrders.Add(order);
                     db.SaveChanges();
 
@@ -134,7 +135,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         }
 
         /// <summary>
-        /// Can edit student execute
+        /// Can Add item execute
         /// </summary>
         /// <returns>Can or cannot</returns>
         private bool CaAddItemExecute()

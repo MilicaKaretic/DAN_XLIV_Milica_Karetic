@@ -101,9 +101,10 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
 
                         if(service.CheckOrderStatus(UserList[i].UserID))
                         {
-                            MessageBox.Show("Your order is pending.");
+                            MessageBox.Show("Your order is pending.");                           
                             Login log = new Login();
                             log.Show();
+                            view.Close();
                         }
                         else
                         {

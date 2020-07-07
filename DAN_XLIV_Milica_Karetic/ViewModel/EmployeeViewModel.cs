@@ -82,7 +82,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
 
         private ICommand deleteOrder;
         /// <summary>
-        /// Edit student command
+        /// delete order command
         /// </summary>
         public ICommand DeleteOrder
         {
@@ -97,7 +97,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         }
 
         /// <summary>
-        /// Edit student execute
+        /// delete order execute
         /// </summary>
         private void DeleteOrderExecute()
         {
@@ -130,7 +130,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         }
 
         /// <summary>
-        /// Can edit student execute
+        /// Can delete order execute
         /// </summary>
         /// <returns>Can or cannot</returns>
         private bool CaDeleteOrderExecute()
@@ -143,7 +143,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
 
         private ICommand approveOrder;
         /// <summary>
-        /// Edit student command
+        /// approve order command
         /// </summary>
         public ICommand ApproveOrder
         {
@@ -158,7 +158,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         }
 
         /// <summary>
-        /// Edit student execute
+        /// approve execute
         /// </summary>
         private void ApproveOrderExecute()
         {
@@ -190,7 +190,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         }
 
         /// <summary>
-        /// Can edit student execute
+        /// Can approve order execute
         /// </summary>
         /// <returns>Can or cannot</returns>
         private bool CanApproveOrderExecute()
@@ -204,7 +204,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
 
         private ICommand logOut;
         /// <summary>
-        /// Edit student command
+        /// logout command
         /// </summary>
         public ICommand LogOut
         {
@@ -219,7 +219,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         }
 
         /// <summary>
-        /// Edit student execute
+        /// logout execute
         /// </summary>
         private void LogOutExecute()
         {
@@ -229,7 +229,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         }
 
         /// <summary>
-        /// Can edit student execute
+        /// Can logout execute
         /// </summary>
         /// <returns>Can or cannot</returns>
         private bool CanLogOutExecute()

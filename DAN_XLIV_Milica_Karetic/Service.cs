@@ -12,7 +12,12 @@ namespace DAN_XLIV_Milica_Karetic
         public static List<tblUser> loggedUser = new List<tblUser>();
         public static List<tblItem> items = new List<tblItem>();
         public static tblUser currentUser = new tblUser();
+        public static tblOrder currentOrder = new tblOrder();
 
+        /// <summary>
+        /// get all users from database
+        /// </summary>
+        /// <returns></returns>
         public List<tblUser> GetAllUsers()
         {
             try
@@ -31,7 +36,10 @@ namespace DAN_XLIV_Milica_Karetic
             }
         }
 
-
+        /// <summary>
+        /// get all items from database
+        /// </summary>
+        /// <returns></returns>
         public List<tblItem> GetAllItems()
         {
             try
@@ -50,6 +58,10 @@ namespace DAN_XLIV_Milica_Karetic
             }
         }
 
+        /// <summary>
+        /// delete order
+        /// </summary>
+        /// <param name="orderID">order id</param>
         public void DeleteOrder(int orderID)
         {
             try
@@ -67,6 +79,10 @@ namespace DAN_XLIV_Milica_Karetic
             }
         }
 
+        /// <summary>
+        /// deny order
+        /// </summary>
+        /// <param name="orderID">order id</param>
         public void DenyOrder(int orderID)
         {
             try
@@ -84,6 +100,10 @@ namespace DAN_XLIV_Milica_Karetic
             }
         }
 
+        /// <summary>
+        /// get all orders
+        /// </summary>
+        /// <returns></returns>
         public List<tblOrder> GetAllOrders()
         {
             try
@@ -102,6 +122,10 @@ namespace DAN_XLIV_Milica_Karetic
             }
         }
 
+        /// <summary>
+        /// approve order
+        /// </summary>
+        /// <param name="orderID"></param>
         public void ApproveOrder(int orderID)
         {
             try
@@ -119,7 +143,11 @@ namespace DAN_XLIV_Milica_Karetic
             }
         }
 
-
+        /// <summary>
+        /// chech user order status 
+        /// </summary>
+        /// <param name="userID">user id</param>
+        /// <returns>pending or not</returns>
         public bool CheckOrderStatus(int userID)
         {
             int a = 0;
