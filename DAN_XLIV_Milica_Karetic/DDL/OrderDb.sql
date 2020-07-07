@@ -11,19 +11,20 @@ GO
 
 USE OrderDB
 CREATE TABLE tblUser(
-	UserID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	JMBG VARCHAR (13) UNIQUE NOT NULL,
+	UserID INT IDENTITY(1,1) PRIMARY KEY 	NOT NULL,
+	JMBG VARCHAR (13) UNIQUE				NOT NULL,
 );
 
 USE OrderDB
 CREATE TABLE tblItem(
-	ItemID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	ItemName VARCHAR (40) UNIQUE NOT NULL,
+	ItemID INT IDENTITY(1,1) PRIMARY KEY 	NOT NULL,
+	ItemName VARCHAR (40) UNIQUE		    NOT NULL,
+	ItemPrice int NOT NULL
 );
 
 USE OrderDB
 CREATE TABLE tblShoppingCart(
-	ShoppingCartID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	ShoppingCartID INT IDENTITY(1,1) PRIMARY KEY 	NOT NULL,
 	Amount INT, 
 	UserID INT FOREIGN KEY REFERENCES tblUser(UserID),
 	ItemID INT FOREIGN KEY REFERENCES tblItem(ItemID),
@@ -31,10 +32,10 @@ CREATE TABLE tblShoppingCart(
 
 USE OrderDB
 CREATE TABLE tblOrder(
-	ShoppingCartID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	TotalPrice INT NOT NULL,
-	OrderStatus  VARCHAR (20) NOT NULL,
-	OrderCreated DATE NOT NULL,
+	ShoppingCartID INT IDENTITY(1,1) PRIMARY KEY 	NOT NULL,
+	TotalPrice INT									NOT NULL,
+	OrderStatus  VARCHAR (20)						NOT NULL,
+	OrderCreated DATE								NOT NULL,
 	UserID INT FOREIGN KEY REFERENCES tblUser(UserID),
 );
 
@@ -44,8 +45,8 @@ INSERT INTO tblUser(JMBG) VALUES ('2222222222222')
 INSERT INTO tblUser(JMBG) VALUES ('3333333333333')
 INSERT INTO tblUser(JMBG) VALUES ('4444444444444')
 
-INSERT INTO tblItem(ItemName) VALUES ('Pizza')
-INSERT INTO tblItem(ItemName) VALUES ('Salad')
-INSERT INTO tblItem(ItemName) VALUES ('Meat')
-INSERT INTO tblItem(ItemName) VALUES ('Hamburger')
-INSERT INTO tblItem(ItemName) VALUES ('Chicken wings')
+INSERT INTO tblItem(ItemName, ItemPrice) VALUES ('Pizza', 300)
+INSERT INTO tblItem(ItemName, ItemPrice) VALUES ('Salad', 250)
+INSERT INTO tblItem(ItemName, ItemPrice) VALUES ('Meat', 400)
+INSERT INTO tblItem(ItemName, ItemPrice) VALUES ('Hamburger', 250)
+INSERT INTO tblItem(ItemName, ItemPrice) VALUES ('Chicken wings', 300)

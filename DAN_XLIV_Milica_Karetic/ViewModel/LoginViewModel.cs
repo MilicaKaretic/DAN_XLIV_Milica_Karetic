@@ -88,6 +88,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         {
             string password = (obj as PasswordBox).Password;
             bool found = false;
+            
             if (UserList.Any())
             {
                 for (int i = 0; i < UserList.Count; i++)
