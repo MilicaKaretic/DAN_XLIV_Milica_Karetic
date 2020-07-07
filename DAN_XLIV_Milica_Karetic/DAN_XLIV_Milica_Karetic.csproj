@@ -80,23 +80,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Service.cs" />
     <Compile Include="Model\tblItem.cs">
       <DependentUpon>OrderDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblOrder.cs">
       <DependentUpon>OrderDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tblShoppingCart.cs">
-      <DependentUpon>OrderDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\tblUser.cs">
       <DependentUpon>OrderDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
     <Compile Include="ViewModel\GuestViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\Employee.xaml.cs">
       <DependentUpon>Employee.xaml</DependentUpon>
     </Compile>
@@ -170,8 +168,8 @@
     <Content Include="DDL\OrderDb.sql" />
     <Content Include="Model\OrderDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>OrderDBModel.Context.cs</LastGenOutput>
       <DependentUpon>OrderDBModel.edmx</DependentUpon>
+      <LastGenOutput>OrderDBModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\OrderDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -13,10 +13,10 @@ namespace DAN_XLIV_Milica_Karetic.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OrderDBEntities : DbContext
+    public partial class OrderDBEntities1 : DbContext
     {
-        public OrderDBEntities()
-            : base("name=OrderDBEntities")
+        public OrderDBEntities1()
+            : base("name=OrderDBEntities1")
         {
         }
     
@@ -27,7 +27,6 @@ namespace DAN_XLIV_Milica_Karetic.Model
     
         public virtual DbSet<tblItem> tblItems { get; set; }
         public virtual DbSet<tblOrder> tblOrders { get; set; }
-        public virtual DbSet<tblShoppingCart> tblShoppingCarts { get; set; }
         public virtual DbSet<tblUser> tblUsers { get; set; }
     }
 }

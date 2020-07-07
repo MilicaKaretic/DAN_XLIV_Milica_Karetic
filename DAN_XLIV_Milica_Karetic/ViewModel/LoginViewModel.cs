@@ -96,6 +96,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
                     if (User.JMBG == UserList[i].JMBG && password == "Gost")
                     {
                         Service.loggedUser.Add(UserList[i]);
+                        Service.currentUser = UserList[i];
                         MainWindow mw = new MainWindow();
                         LabelInfo = "Logged in";
                         found = true;

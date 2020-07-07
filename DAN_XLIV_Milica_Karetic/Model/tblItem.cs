@@ -17,7 +17,7 @@ namespace DAN_XLIV_Milica_Karetic.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblItem()
         {
-            this.tblShoppingCarts = new HashSet<tblShoppingCart>();
+            this.tblOrders = new HashSet<tblOrder>();
         }
     
         public int ItemID { get; set; }
@@ -25,6 +25,6 @@ namespace DAN_XLIV_Milica_Karetic.Model
         public int ItemPrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblShoppingCart> tblShoppingCarts { get; set; }
+        public virtual ICollection<tblOrder> tblOrders { get; set; }
     }
 }

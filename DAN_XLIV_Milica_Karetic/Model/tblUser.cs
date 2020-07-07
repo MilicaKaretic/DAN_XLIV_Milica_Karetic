@@ -18,7 +18,6 @@ namespace DAN_XLIV_Milica_Karetic.Model
         public tblUser()
         {
             this.tblOrders = new HashSet<tblOrder>();
-            this.tblShoppingCarts = new HashSet<tblShoppingCart>();
         }
     
         public int UserID { get; set; }
@@ -26,7 +25,5 @@ namespace DAN_XLIV_Milica_Karetic.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblOrder> tblOrders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblShoppingCart> tblShoppingCarts { get; set; }
     }
 }
