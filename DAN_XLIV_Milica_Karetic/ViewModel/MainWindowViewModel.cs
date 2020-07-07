@@ -1,5 +1,6 @@
 ﻿using DAN_XLIV_Milica_Karetic.Commands;
 using DAN_XLIV_Milica_Karetic.Model;
+using DAN_XLIV_Milica_Karetic.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -119,18 +120,10 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
                     db.SaveChanges();
 
                     MessageBox.Show("Order successfuly created. Your order is pending.");
+                    Login log = new Login();
                     main.Close();
+                    log.Show();
 
-
-                    //AddStudent addStudent = new AddStudent(Student);
-                    //addStudent.ShowDialog();
-                    //if ((addStudent.DataContext as AddStudentViewModel).IsUpdateStudent == true)
-                    //{
-                    //    using (Service1Client wcf = new Service1Client())
-                    //    {
-                    //        StudentList = wcf.GetAllStudents().ToList();
-                    //    }
-                    //}
                 }
 
             }

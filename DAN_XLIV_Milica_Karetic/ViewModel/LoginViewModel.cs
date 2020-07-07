@@ -3,6 +3,7 @@ using DAN_XLIV_Milica_Karetic.Model;
 using DAN_XLIV_Milica_Karetic.View;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -97,12 +98,23 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
                     {
                         Service.loggedUser.Add(UserList[i]);
                         Service.currentUser = UserList[i];
-                        MainWindow mw = new MainWindow();
-                        LabelInfo = "Logged in";
-                        found = true;
-                        view.Close();
-                        mw.Show();
-                        break;
+
+                        if(service.CheckOrderStatus(UserList[i].UserID))
+                        {
+                            MessageBox.Show("Your order is pending.");
+                            Login log = new Login();
+                            log.Show();
+                        }
+                        else
+                        {
+                            MainWindow mw = new MainWindow();
+                            LabelInfo = "Logged in";
+                            found = true;
+                            view.Close();
+                            mw.Show();
+                            break;
+                        }
+                        
                     }
                 }
 

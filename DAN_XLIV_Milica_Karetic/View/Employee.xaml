@@ -81,5 +81,16 @@
                 VerticalAlignment="Top"
                 Width="75"
                 Grid.RowSpan="2" />
+        <Button Content="Log out"
+                Name="btnLogOut"
+                Grid.Column="4"
+                IsEnabled="True"
+                HorizontalAlignment="Left"
+                Margin="13,2,-67,0"
+                Grid.Row="1"
+                Command="{Binding LogOut}"
+                VerticalAlignment="Top"
+                Width="75"
+                RenderTransformOrigin="-0.227,0.45" />
     </Grid>
 </Window>

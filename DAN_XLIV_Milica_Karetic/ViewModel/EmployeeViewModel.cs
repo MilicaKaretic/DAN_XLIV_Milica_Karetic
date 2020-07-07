@@ -151,7 +151,7 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
             {
                 if (approveOrder == null)
                 {
-                    approveOrder = new RelayCommand(param => ApproveOrderExecute(), param => CApproveOrderExecute());
+                    approveOrder = new RelayCommand(param => ApproveOrderExecute(), param => CanApproveOrderExecute());
                 }
                 return approveOrder;
             }
@@ -193,12 +193,48 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
         /// Can edit student execute
         /// </summary>
         /// <returns>Can or cannot</returns>
-        private bool CApproveOrderExecute()
+        private bool CanApproveOrderExecute()
         {
             if (Order == null)
                 return false;
             else
                 return true;
+        }
+
+
+        private ICommand logOut;
+        /// <summary>
+        /// Edit student command
+        /// </summary>
+        public ICommand LogOut
+        {
+            get
+            {
+                if (logOut == null)
+                {
+                    logOut = new RelayCommand(param => LogOutExecute(), param => CanLogOutExecute());
+                }
+                return logOut;
+            }
+        }
+
+        /// <summary>
+        /// Edit student execute
+        /// </summary>
+        private void LogOutExecute()
+        {
+            Login log = new Login();
+            log.Show();
+            view.Close();
+        }
+
+        /// <summary>
+        /// Can edit student execute
+        /// </summary>
+        /// <returns>Can or cannot</returns>
+        private bool CanLogOutExecute()
+        {
+            return true;
         }
         #endregion
     }

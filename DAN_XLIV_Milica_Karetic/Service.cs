@@ -118,5 +118,37 @@ namespace DAN_XLIV_Milica_Karetic
                 Console.WriteLine(ex.Message.ToString());
             }
         }
+
+
+        public bool CheckOrderStatus(int userID)
+        {
+            int a = 0;
+            try
+            {
+                using (OrderDBEntities1 context = new OrderDBEntities1())
+                {
+                    List<tblOrder> orders = new List<tblOrder>();
+                    orders = context.tblOrders.ToList();
+
+                    List<tblOrder> userOrders = orders.Where(u => u.UserID == userID).ToList();
+
+                    for (int i = 0; i < userOrders.Count; i++)
+                    {
+                        if (userOrders[i].OrderStatus == "pending")
+                            a++;
+                    }
+                    
+                }
+                if (a > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                return false;
+            }
+        }
     }
 }
