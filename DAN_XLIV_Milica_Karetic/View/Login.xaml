@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DAN_XLIV_Milica_Karetic.View"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
-    <Border Background="#2e3137"
+    <Border Background="Gray"
             CornerRadius="20"
             Margin="20">
         <StackPanel Margin="20">
@@ -14,7 +14,7 @@
                    Foreground="White"
                    FontSize="25"
                    HorizontalAlignment="Center" />
-            <Separator></Separator>
+
             <Label Content="Username"
                    Foreground="White" />
             <TextBox Name="txtUsername"

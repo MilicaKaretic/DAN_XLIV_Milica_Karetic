@@ -49,5 +49,74 @@ namespace DAN_XLIV_Milica_Karetic
                 return null;
             }
         }
+
+        public void DeleteOrder(int orderID)
+        {
+            try
+            {
+                using (OrderDBEntities1 context = new OrderDBEntities1())
+                {
+                    tblOrder orderToDelete = (from r in context.tblOrders where r.OrderID == orderID select r).First();
+                    context.tblOrders.Remove(orderToDelete);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
+        }
+
+        public void DenyOrder(int orderID)
+        {
+            try
+            {
+                using (OrderDBEntities1 context = new OrderDBEntities1())
+                {
+                    tblOrder orderToDeny = (from r in context.tblOrders where r.OrderID == orderID select r).First();
+                    orderToDeny.OrderStatus = "denied";
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
+        }
+
+        public List<tblOrder> GetAllOrders()
+        {
+            try
+            {
+                using (OrderDBEntities1 context = new OrderDBEntities1())
+                {
+                    List<tblOrder> orders = new List<tblOrder>();
+                    orders = context.tblOrders.ToList();
+                    return orders;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                return null;
+            }
+        }
+
+        public void ApproveOrder(int orderID)
+        {
+            try
+            {
+                using (OrderDBEntities1 context = new OrderDBEntities1())
+                {
+                    tblOrder orderToDeny = (from r in context.tblOrders where r.OrderID == orderID select r).First();
+                    orderToDeny.OrderStatus = "approved";
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAN_XLIV_Milica_Karetic.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace DAN_XLIV_Milica_Karetic.View
         public Employee()
         {
             InitializeComponent();
+            this.DataContext = new EmployeeViewModel(this);
         }
     }
 }

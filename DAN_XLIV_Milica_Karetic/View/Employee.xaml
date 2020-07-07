@@ -5,8 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DAN_XLIV_Milica_Karetic.View"
         mc:Ignorable="d"
-        Title="Employee" Height="450" Width="800">
-    <Grid>
+        Title="Employee"
         
+        WindowStartupLocation="CenterScreen"
+        Height="450"
+        Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1"
+              Grid.Row="1"
+              Height="auto"
+              Width="auto">
+            <DataGrid Name="DataGridResults"
+                      ItemsSource="{Binding OrderList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Order,UpdateSourceTrigger=PropertyChanged}"
+                      IsReadOnly="True"
+                      HeadersVisibility="Column"
+                      AutoGenerateColumns="False"
+                      Visibility="{Binding ViewOrder, UpdateSourceTrigger=PropertyChanged}"
+                      HorizontalGridLinesBrush="Black"
+                      BorderBrush="Black"
+                      Foreground="Black"
+                      FontWeight="Bold">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Created Date"
+                                        Binding="{Binding OrderCreated}" />
+                    <DataGridTextColumn Header="Item Price"
+                                        Binding="{Binding TotalPrice}" />
+                    <DataGridTextColumn Header="Item Status"
+                                        Binding="{Binding OrderStatus}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Button Content="✅"
+                Name="btnApprove"
+                Grid.Column="4"
+                HorizontalAlignment="Left"
+                Margin="13,0,-67,0"
+                Command="{Binding ApproveOrder, UpdateSourceTrigger=PropertyChanged}"
+                Grid.Row="2"
+                VerticalAlignment="Top"
+                Width="75"
+                RenderTransformOrigin="-1.48,-1.1"
+                Grid.RowSpan="4" />
+        <Button Content="✖"
+                Name="btnDelete"
+                Grid.Column="4"
+                HorizontalAlignment="Left"
+                Margin="13,3,-67,0"
+                Command="{Binding DeleteOrder, UpdateSourceTrigger=PropertyChanged}"
+                Grid.Row="5"
+                VerticalAlignment="Top"
+                Width="75"
+                Grid.RowSpan="2" />
     </Grid>
 </Window>

@@ -110,13 +110,16 @@ namespace DAN_XLIV_Milica_Karetic.ViewModel
                     DateTime dateNow = DateTime.Now;
 
                     order.TotalPrice = Item.ItemPrice * int.Parse(quantityItem);
-                    order.OrderStatus = "cekanje";
+                    order.OrderStatus = "pending";
                     order.OrderCreated = dateNow;
                     order.UserID = Service.currentUser.UserID;
                     order.ItemID = Item.ItemID;
 
                     db.tblOrders.Add(order);
                     db.SaveChanges();
+
+                    MessageBox.Show("Order successfuly created. Your order is pending.");
+                    main.Close();
 
 
                     //AddStudent addStudent = new AddStudent(Student);
