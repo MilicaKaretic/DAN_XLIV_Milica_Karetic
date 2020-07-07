@@ -64,33 +64,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="OrderDBModel.Context.cs">
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Model\OrderDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderDBModel.cs">
+    <Compile Include="Model\OrderDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderDBModel.Designer.cs">
+    <Compile Include="Model\OrderDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderDBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="tblItem.cs">
+    <Compile Include="Model\tblItem.cs">
       <DependentUpon>OrderDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblOrder.cs">
+    <Compile Include="Model\tblOrder.cs">
       <DependentUpon>OrderDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblShoppingCart.cs">
+    <Compile Include="Model\tblShoppingCart.cs">
       <DependentUpon>OrderDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblUser.cs">
+    <Compile Include="Model\tblUser.cs">
       <DependentUpon>OrderDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
     <Compile Include="ViewModel\GuestViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -146,11 +149,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="OrderDBModel.edmx">
+    <EntityDeploy Include="Model\OrderDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OrderDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="OrderDBModel.edmx.diagram">
+    <None Include="Model\OrderDBModel.edmx.diagram">
       <DependentUpon>OrderDBModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -162,17 +165,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DDL\OrderDb.sql" />
-    <Content Include="OrderDBModel.Context.tt">
+    <Content Include="Model\OrderDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>OrderDBModel.Context.cs</LastGenOutput>
       <DependentUpon>OrderDBModel.edmx</DependentUpon>
     </Content>
-    <Content Include="OrderDBModel.tt">
+    <Content Include="Model\OrderDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>OrderDBModel.edmx</DependentUpon>
       <LastGenOutput>OrderDBModel.cs</LastGenOutput>

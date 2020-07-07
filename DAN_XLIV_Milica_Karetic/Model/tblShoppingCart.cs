@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAN_XLIV_Milica_Karetic
+namespace DAN_XLIV_Milica_Karetic.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tblOrder
+    public partial class tblShoppingCart
     {
         public int ShoppingCartID { get; set; }
-        public int TotalPrice { get; set; }
-        public string OrderStatus { get; set; }
-        public System.DateTime OrderCreated { get; set; }
+        public Nullable<int> Amount { get; set; }
         public Nullable<int> UserID { get; set; }
+        public Nullable<int> ItemID { get; set; }
     
+        public virtual tblItem tblItem { get; set; }
         public virtual tblUser tblUser { get; set; }
     }
 }

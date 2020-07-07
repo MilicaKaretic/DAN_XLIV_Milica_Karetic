@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAN_XLIV_Milica_Karetic
+namespace DAN_XLIV_Milica_Karetic.Model
 {
     using System;
     using System.Data.Entity;

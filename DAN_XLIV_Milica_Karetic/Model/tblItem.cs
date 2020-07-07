@@ -7,25 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAN_XLIV_Milica_Karetic
+namespace DAN_XLIV_Milica_Karetic.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tblUser
+    public partial class tblItem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblUser()
+        public tblItem()
         {
-            this.tblOrders = new HashSet<tblOrder>();
             this.tblShoppingCarts = new HashSet<tblShoppingCart>();
         }
     
-        public int UserID { get; set; }
-        public string JMBG { get; set; }
+        public int ItemID { get; set; }
+        public string ItemName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblOrder> tblOrders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblShoppingCart> tblShoppingCarts { get; set; }
     }
