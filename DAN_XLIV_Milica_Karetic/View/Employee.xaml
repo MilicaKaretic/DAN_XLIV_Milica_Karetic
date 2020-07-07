@@ -1,14 +1,16 @@
-﻿<Window x:Class="DAN_XLIV_Milica_Karetic.MainWindow"
+﻿<Window x:Class="DAN_XLIV_Milica_Karetic.View.Employee"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DAN_XLIV_Milica_Karetic"
+        xmlns:local="clr-namespace:DAN_XLIV_Milica_Karetic.View"
         mc:Ignorable="d"
-        Title="MainWindow"
-        SizeToContent="WidthAndHeight"
-        WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,361,127">
+        Title="Employee"
+        
+        WindowStartupLocation="CenterScreen"
+        Height="450"
+        Width="450">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width="auto" />
@@ -38,51 +40,57 @@
               Height="auto"
               Width="auto">
             <DataGrid Name="DataGridResults"
-                      ItemsSource="{Binding ItemList, UpdateSourceTrigger=PropertyChanged}"
-                      SelectedItem="{Binding Item,UpdateSourceTrigger=PropertyChanged}"
+                      ItemsSource="{Binding OrderList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Order,UpdateSourceTrigger=PropertyChanged}"
                       IsReadOnly="True"
                       HeadersVisibility="Column"
                       AutoGenerateColumns="False"
-                      Visibility="{Binding ViewItem, UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding ViewOrder, UpdateSourceTrigger=PropertyChanged}"
                       HorizontalGridLinesBrush="Black"
                       BorderBrush="Black"
                       Foreground="Black"
                       FontWeight="Bold">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Item Name"
-                                        Binding="{Binding ItemName}" />
+                    <DataGridTextColumn Header="Created Date"
+                                        Binding="{Binding OrderCreated}" />
                     <DataGridTextColumn Header="Item Price"
-                                        Binding="{Binding ItemPrice}" />
+                                        Binding="{Binding TotalPrice}" />
+                    <DataGridTextColumn Header="Item Status"
+                                        Binding="{Binding OrderStatus}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Label Content="Quantity:"
-               Grid.Column="3"
-               HorizontalAlignment="Right"
-               HorizontalContentAlignment="Right"
-               Grid.Row="3"
-               VerticalAlignment="Top"
-               Width="100" />
-        <TextBox Grid.Column="3"
-                 Name="txtQuantity"
-                 HorizontalAlignment="Left"
-                 Height="23"
-                 Grid.Row="3"
-                 TextWrapping="Wrap"
-                 Text=""
-                 VerticalAlignment="Top"
-                 Width="120"
-                 Grid.ColumnSpan="2"
-                 Margin="100,1,-80,0"
-                 TextChanged="TxtQuantity_TextChanged" />
-        <Button Content="Order"
-                Name="btnOrder"
+        <Button Content="✅"
+                Name="btnApprove"
                 Grid.Column="4"
                 HorizontalAlignment="Left"
-                Margin="137,0,-192,0"
-                Command="{Binding AddItem, UpdateSourceTrigger=PropertyChanged}"
-                Grid.Row="3"
+                Margin="13,0,-67,0"
+                Command="{Binding ApproveOrder, UpdateSourceTrigger=PropertyChanged}"
+                Grid.Row="2"
                 VerticalAlignment="Top"
-                Width="75" />
+                Width="75"
+                RenderTransformOrigin="-1.48,-1.1"
+                Grid.RowSpan="4" />
+        <Button Content="✖"
+                Name="btnDelete"
+                Grid.Column="4"
+                HorizontalAlignment="Left"
+                Margin="13,3,-67,0"
+                Command="{Binding DeleteOrder, UpdateSourceTrigger=PropertyChanged}"
+                Grid.Row="5"
+                VerticalAlignment="Top"
+                Width="75"
+                Grid.RowSpan="2" />
+        <Button Content="Log out"
+                Name="btnLogOut"
+                Grid.Column="4"
+                IsEnabled="True"
+                HorizontalAlignment="Left"
+                Margin="13,2,-67,0"
+                Grid.Row="1"
+                Command="{Binding LogOut}"
+                VerticalAlignment="Top"
+                Width="75"
+                RenderTransformOrigin="-0.227,0.45" />
     </Grid>
 </Window>
